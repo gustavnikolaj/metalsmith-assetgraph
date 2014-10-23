@@ -4,14 +4,14 @@
   "description": "AssetGraph middleware for MetalSmith",
   "main": "lib/index.js",
   "files": [
-      "lib/index.js"
+    "lib/index.js"
   ],
   "scripts": {
     "test": "mocha -R spec"
   },
   "author": "Gustav Nikolaj <gustavnikolaj@gmail.com>",
   "contributors": [
-      "Andreas Lind <andreas@one.com>"
+    "Andreas Lind <andreas@one.com>"
   ],
   "license": "MIT",
   "dependencies": {

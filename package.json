@@ -1,0 +1,22 @@
+{
+  "name": "metalsmith-assetgraph",
+  "version": "0.0.0",
+  "description": "AssetGraph middleware for MetalSmith",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "author": "Gustav Nikolaj <gustavnikolaj@gmail.com>",
+  "contributors": [
+      "Andreas Lind <andreas@one.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "assetgraph-builder": "2.6.0",
+    "urltools": "0.2.0"
+  },
+  "devDependencies": {
+    "mocha": "2.0.0",
+    "unexpected": "5.0.0-beta11"
+  }
+}

@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "AssetGraph middleware for MetalSmith",
   "main": "lib/index.js",
+  "files": [
+      "lib/index.js"
+  ],
   "scripts": {
     "test": "mocha -R spec"
   },

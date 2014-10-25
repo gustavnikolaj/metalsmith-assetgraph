@@ -23,7 +23,7 @@ describe('metalsmith-assetgraph', function () {
             rimraf(Path.resolve(__dirname, 'build'), done);
         }
         before(deleteBuildFolder);
-        afterEach(deleteBuildFolder);
+        after(deleteBuildFolder);
         function readTestData(path, callback) {
             glob(path + '/**.*', function (err, files) {
                 if (err) {
@@ -45,16 +45,17 @@ describe('metalsmith-assetgraph', function () {
             'twoPagesWithOneSharedCssFile'
         ].forEach(function (testCase) {
             it(testCase, function (done) {
+                this.timeout(10000);
                 readTestData(Path.resolve(__dirname, 'fixtures', testCase, 'expected'), function (err, expectedData) {
                     var m = Metalsmith(__dirname);
                     m.source('fixtures/' + testCase + '/src')
-                    m.destination('build');
+                    m.destination('build/' + testCase);
                     m.use(assetGraph({
                         version: 'testFixture'
                     }));
                     m.build(function (err) {
                         expect(err, 'to be null');
-                        readTestData(Path.resolve(__dirname, 'build'), function (err, actualData) {
+                        readTestData(Path.resolve(__dirname, 'build', testCase), function (err, actualData) {
                             expect(expectedData, 'to equal', actualData);
                             done();
                         });

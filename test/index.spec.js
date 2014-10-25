@@ -41,7 +41,8 @@ describe('metalsmith-assetgraph', function () {
             });
         }
         [
-            'singlePageWithTwoCssFiles'
+            'singlePageWithTwoCssFiles',
+            'twoPagesWithOneSharedCssFile'
         ].forEach(function (testCase) {
             it(testCase, function (done) {
                 readTestData(Path.resolve(__dirname, 'fixtures', testCase, 'expected'), function (err, expectedData) {

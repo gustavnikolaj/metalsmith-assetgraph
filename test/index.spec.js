@@ -45,7 +45,6 @@ describe('metalsmith-assetgraph', function () {
             'twoPagesWithOneSharedCssFile'
         ].forEach(function (testCase) {
             it(testCase, function (done) {
-                this.timeout(10000);
                 readTestData(Path.resolve(__dirname, 'fixtures', testCase, 'expected'), function (err, expectedData) {
                     var m = Metalsmith(__dirname);
                     m.source('fixtures/' + testCase + '/src')
